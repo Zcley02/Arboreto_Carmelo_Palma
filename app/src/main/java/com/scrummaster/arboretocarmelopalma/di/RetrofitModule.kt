@@ -28,7 +28,7 @@ object RetrofitModule {
     @Provides
     fun provideRetrofit(gson: Gson) : Retrofit.Builder{
         return Retrofit.Builder()
-            .baseUrl("https://api-games-mobil.herokuapp.com/")
+            .baseUrl("https://api-arboreto.herokuapp.com/")
             .addConverterFactory(GsonConverterFactory.create(gson))
     }
 

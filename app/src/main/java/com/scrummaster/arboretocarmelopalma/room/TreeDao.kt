@@ -10,6 +10,6 @@ interface TreeDao {
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     suspend fun insert(treeEntity: TreeCacheEntity): Long
 
-    @Query("Select * from arboles")
+    @Query("select * from arboles")
     suspend fun get(): List<TreeCacheEntity>
 }

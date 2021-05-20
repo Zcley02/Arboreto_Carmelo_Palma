@@ -23,7 +23,7 @@ object RoomModule {
 
     @Singleton
     @Provides
-    fun provideTreeDao(treeDatabase: TreeDatabase): TreeDao{
+    fun provideTreeDao(treeDatabase: TreeDatabase): TreeDao {
         return treeDatabase.treeDao()
     }
 }

@@ -3,7 +3,6 @@ package com.scrummaster.arboretocarmelopalma.repository
 import com.scrummaster.arboretocarmelopalma.retrofit.NetworkMapper
 import com.scrummaster.arboretocarmelopalma.retrofit.TreeRetrofit
 import com.scrummaster.arboretocarmelopalma.room.CacheMapper
-import com.scrummaster.arboretocarmelopalma.room.TreeDao
 import com.scrummaster.arboretocarmelopalma.utils.DataState
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.flow.Flow
