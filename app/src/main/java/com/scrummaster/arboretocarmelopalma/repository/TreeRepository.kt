@@ -9,6 +9,7 @@ import kotlinx.coroutines.delay
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.flow
 import java.lang.Exception
+import java.net.UnknownHostException
 
 class TreeRepository constructor(
     private val treeDao : TreeDao,
@@ -27,8 +28,18 @@ class TreeRepository constructor(
             }
             val cachePla = treeDao.get()
             emit(DataState.Success(cacheMapper.mapFromEntityList(cachePla)))
-        }catch (e: Exception){
-            emit(DataState.Error(e))
+        }catch (e: Exception) {
+            when (e) {
+                is UnknownHostException -> {
+                    val cacheT = treeDao.get()
+                    if (cacheT.isEmpty()) {
+                        emit(DataState.Error(Exception("Tabla de Árobles esta vacía. Conéctese a Internet")))
+                    } else {
+                        emit(DataState.Success(cacheMapper.mapFromEntityList(cacheT)))
+                    }
+                }
+            }
+            //emit(DataState.Error(e))
         }
     }
 }
