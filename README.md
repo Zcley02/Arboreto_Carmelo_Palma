@@ -1,2 +1,6 @@
-# supercell-games
-Integrantes: Arelys Marcela Ortiz Hernández y Miguel Alejandro Solis Robles
+
+Integrantes: 
+Arelys Marcela Ortiz Hernández
+Cleymer Joel Zavala Tinoco
+Miguel Alejandro Solis Robles
+
