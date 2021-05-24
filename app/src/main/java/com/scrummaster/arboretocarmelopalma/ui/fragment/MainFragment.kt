@@ -6,17 +6,18 @@ import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.lifecycleScope
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.scrummaster.arboretocarmelopalma.R
-import com.scrummaster.arboretocarmelopalma.intent.Intent
-import com.scrummaster.arboretocarmelopalma.ui.MainViewModel
-import com.scrummaster.arboretocarmelopalma.utils.AdapterTree
-import com.scrummaster.arboretocarmelopalma.utils.DataState
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.android.synthetic.main.fragment_first.*
 import kotlinx.coroutines.ExperimentalCoroutinesApi
 import kotlinx.coroutines.flow.collect
 import kotlinx.coroutines.launch
+import com.scrummaster.arboretocarmelopalma.ui.MainViewModel
 import javax.inject.Inject
+import com.scrummaster.arboretocarmelopalma.R
+import com.scrummaster.arboretocarmelopalma.intent.Intent
+import com.scrummaster.arboretocarmelopalma.utils.AdapterTree
+import com.scrummaster.arboretocarmelopalma.utils.DataState
+
 
 @ExperimentalCoroutinesApi
 @AndroidEntryPoint
@@ -40,8 +41,8 @@ constructor() : Fragment(R.layout.fragment_first) {
             )
         layoutManager.reverseLayout = true
         layoutManager.stackFromEnd = true
-        recyclerViewGames.layoutManager = layoutManager
-        recyclerViewGames.adapter = adapterTrees
+        recyclerViewTrees.layoutManager = layoutManager
+        recyclerViewTrees.adapter = adapterTrees
 
         subscribeObservers()
         lifecycleScope.launch {
@@ -55,7 +56,7 @@ constructor() : Fragment(R.layout.fragment_first) {
                 when(it){
                     is DataState.Success -> {
                         displayProgressBar(false)
-                        adapterTrees.setGames(it.trees)
+                        adapterTrees.setTrees(it.trees)
                     }
                     is DataState.Error -> {
                         displayProgressBar(false)

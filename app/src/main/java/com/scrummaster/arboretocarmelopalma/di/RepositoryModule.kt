@@ -19,10 +19,10 @@ object RepositoryModule {
     @Provides
     fun provideTreeRepository(
         treeDao: TreeDao,
-        treeRetrofit: TreeRetrofit,
+        placeRetrofit: TreeRetrofit,
         cacheMapper: CacheMapper,
         networkMapper: NetworkMapper
-    ): TreeRepository{
-        return TreeRepository(treeDao, treeRetrofit, cacheMapper, networkMapper)
+    ): TreeRepository {
+        return TreeRepository(treeDao, placeRetrofit, cacheMapper, networkMapper)
     }
 }

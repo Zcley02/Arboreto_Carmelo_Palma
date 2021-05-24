@@ -14,7 +14,7 @@ object AdapterModule {
 
     @Singleton
     @Provides
-    fun provideAdapterGenres(application: Application): AdapterTree {
+    fun provideAdapterGenres(application: Application): AdapterTree{
         return AdapterTree()
     }
 }

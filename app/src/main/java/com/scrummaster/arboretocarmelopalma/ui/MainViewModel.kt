@@ -5,14 +5,13 @@ import androidx.hilt.lifecycle.ViewModelInject
 import androidx.lifecycle.SavedStateHandle
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.scrummaster.arboretocarmelopalma.intent.Intent
-import com.scrummaster.arboretocarmelopalma.repository.TreeRepository
-import com.scrummaster.arboretocarmelopalma.utils.DataState
 import kotlinx.coroutines.ExperimentalCoroutinesApi
 import kotlinx.coroutines.channels.Channel
 import kotlinx.coroutines.flow.*
 import kotlinx.coroutines.launch
-import javax.inject.Inject
+import com.scrummaster.arboretocarmelopalma.intent.Intent
+import com.scrummaster.arboretocarmelopalma.repository.TreeRepository
+import com.scrummaster.arboretocarmelopalma.utils.DataState
 
 @ExperimentalCoroutinesApi
 class MainViewModel
@@ -33,7 +32,7 @@ class MainViewModel
             userIntent.consumeAsFlow().collect{intn ->
                 when(intn){
                     is Intent.GetTreeEvent -> {
-                        treeRepository.getTrees()
+                        treeRepository.getPlaces()
                             .onEach {
                                 _dataState.value = it
                             }

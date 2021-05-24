@@ -6,16 +6,16 @@ import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
-import com.scrummaster.arboretocarmelopalma.R
 import com.scrummaster.arboretocarmelopalma.model.Tree
 import com.squareup.picasso.Picasso
 import kotlinx.android.synthetic.main.item_tree.view.*
+import com.scrummaster.arboretocarmelopalma.R
 
 class AdapterTree () : RecyclerView.Adapter<AdapterTree.ViewHolder>() {
 
     lateinit var items: ArrayList<Tree>
 
-    fun setGames(items: List<Tree>){
+    fun setTrees(items: List<Tree>){
         this.items = items as ArrayList<Tree>
         notifyDataSetChanged()
     }
