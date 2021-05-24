@@ -1,14 +1,13 @@
 package com.scrummaster.arboretocarmelopalma.retrofit
 
+import javax.inject.Inject
 import com.scrummaster.arboretocarmelopalma.model.Tree
 import com.scrummaster.arboretocarmelopalma.utils.EntityMapper
-import javax.inject.Inject
 
 class NetworkMapper
 @Inject
-constructor() : EntityMapper<TreeNetworkEntity, Tree>{
-
-    override fun mapFromEntity(entity: TreeNetworkEntity): Tree{
+constructor() : EntityMapper<TreeNetworkEntity, Tree> {
+    override fun mapFromEntity(entity: TreeNetworkEntity): Tree {
         return Tree(
             id = entity.id,
             name = entity.name,
@@ -22,7 +21,7 @@ constructor() : EntityMapper<TreeNetworkEntity, Tree>{
     }
 
     override fun mapToEntity(domainModel: Tree): TreeNetworkEntity {
-        return TreeNetworkEntity(
+        return  TreeNetworkEntity(
             id = domainModel.id,
             name = domainModel.name,
             scientific_name = domainModel.scientific_name,
@@ -37,5 +36,4 @@ constructor() : EntityMapper<TreeNetworkEntity, Tree>{
     fun mapFromEntityList(entities: List<TreeNetworkEntity>): List<Tree>{
         return entities.map { mapFromEntity(it) }
     }
-
 }

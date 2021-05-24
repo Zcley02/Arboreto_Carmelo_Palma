@@ -8,8 +8,7 @@ import androidx.room.Query
 @Dao
 interface TreeDao {
     @Insert(onConflict = OnConflictStrategy.REPLACE)
-    suspend fun insert(treeEntity: TreeCacheEntity): Long
-
-    @Query("Select * from arboles")
+    suspend fun insert(catEntity: TreeCacheEntity): Long
+    @Query("select * from arboles")
     suspend fun get(): List<TreeCacheEntity>
 }

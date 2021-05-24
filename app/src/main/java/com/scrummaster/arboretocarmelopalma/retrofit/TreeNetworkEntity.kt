@@ -34,5 +34,5 @@ class TreeNetworkEntity (
 
     @SerializedName("image")
     @Expose
-    var image: String
+    var image: String,
 )
